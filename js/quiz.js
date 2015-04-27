@@ -9,7 +9,12 @@ var selected;
 $(document).ready(function(){
         
     readJsonFile();     
-    test(i);
+    $("#quiz").hide(); 
+   
+    $("#signin").on("click", function(){
+    	login(i);
+    }
+   	
     $("#next").on("click", function(){
         selected = $("input[name=choices]:checked").val();
         
@@ -44,6 +49,8 @@ $(document).ready(function(){
 function test(i){
     var questionNo = "Q"+(i+1) +"- ";
     $("#question").hide();
+    $("#quiz").show();
+    
     $("#question").text(questionNo + questions[i].question).fadeIn("slow");
       console.log(questions[0].question + " " + i);
       $(".choices").find("p").fadeOut("fast");
@@ -116,4 +123,15 @@ function readJsonFile() {
         async: false
     });
     console.log("done reading file!");
+}
+
+function login(){
+    var user= $("#username").val();
+    var pass= $("#password").val();
+    
+    if(user=="guizar11" && pass=="12345"){
+    	test(i);
+    }else{
+    	alert("invalid username or password");
+    }
 }
