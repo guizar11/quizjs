@@ -9,7 +9,6 @@ var selected;
 $(document).ready(function(){
         
     readJsonFile();     
-    $("#quiz").hide(); 
    
     $("#signin").on("click", function(){
     	login(i);
