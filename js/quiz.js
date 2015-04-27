@@ -12,7 +12,7 @@ $(document).ready(function(){
    
     $("#signin").on("click", function(){
     	login(i);
-    }
+    });
    	
     $("#next").on("click", function(){
         selected = $("input[name=choices]:checked").val();
