@@ -47,7 +47,9 @@ $(document).ready(function(){
 });
 function test(i){
     var questionNo = "Q"+(i+1) +"- ";
+    $("#login").hide();
     $("#question").hide();
+    
     $("#quiz").show();
     
     $("#question").text(questionNo + questions[i].question).fadeIn("slow");
@@ -124,7 +126,7 @@ function readJsonFile() {
     console.log("done reading file!");
 }
 
-function login(){
+function login(i){
     var user= $("#username").val();
     var pass= $("#password").val();
     
